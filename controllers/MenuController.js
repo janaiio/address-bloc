@@ -12,7 +12,8 @@ module.exports = class MenuController {
           choices: [
             "Add new contact", //triggers method to add individual contact
             "Exit", //exit the program
-            "Current date and time"
+            "Current date and time",
+            "Reminder"
           ]
       }
     ];
@@ -31,6 +32,9 @@ module.exports = class MenuController {
           break;
         case "Current date and time":
           this.getDate();
+          break;
+        case "Reminder":
+          this.remindMe();
           break;
         default:
           console.log("Invalid input");
@@ -64,5 +68,9 @@ module.exports = class MenuController {
   getDate(){ //logs the current time and date
     const ts = new Date();
     console.log(ts.toLocaleString());
+  }
+
+  remindMe(){ //return a string
+    return ('Learning is a life-long pursuit');
   }
 }
