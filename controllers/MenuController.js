@@ -57,6 +57,10 @@ module.exports = class MenuController {
     process.exit(); //program will end
   }
 
+  getContactCount(){
+    return this.contacts.length;
+  }
+
   getDate(){ //logs the current time and date
     const ts = new Date();
     console.log(ts.toLocaleString());
