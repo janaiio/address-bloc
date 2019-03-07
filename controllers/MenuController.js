@@ -11,9 +11,15 @@ module.exports = class MenuController {
           message: "Please choose from an option below: ",
           choices: [
             "Add new contact", //triggers method to add individual contact
+<<<<<<< HEAD
             "Exit", //exit the program
             "Current date and time",
             "Reminder"
+=======
+            "Current date and time",
+            "Reminder",
+            "Exit" //exit the program
+>>>>>>> 6ebe82e1d893d72609d5d1cf52c6215f4aaee42f
           ]
       }
     ];
@@ -27,15 +33,18 @@ module.exports = class MenuController {
         case "Add new contact" :
           this.addContact();
           break;
-        case "Exit":
-          this.exit();
-          break;
         case "Current date and time":
           this.getDate();
           break;
         case "Reminder":
           this.remindMe();
           break;
+<<<<<<< HEAD
+=======
+        case "Exit":
+          this.exit();
+          break;
+>>>>>>> 6ebe82e1d893d72609d5d1cf52c6215f4aaee42f
         default:
           console.log("Invalid input");
           this.main();
@@ -56,9 +65,8 @@ module.exports = class MenuController {
     this.main(); //returns main menu
   }
 
-  exit(){
-    console.log("Thanks for using AddressBloc!");
-    process.exit(); //program will end
+  getContactCount(){
+    return this.contacts.length;
   }
 
   getContactCount(){
@@ -68,9 +76,22 @@ module.exports = class MenuController {
   getDate(){ //logs the current time and date
     const ts = new Date();
     console.log(ts.toLocaleString());
+    this.main();
   }
 
   remindMe(){ //return a string
     return ('Learning is a life-long pursuit');
   }
+
+  exit(){
+    console.log("Thanks for using AddressBloc!");
+    process.exit(); //program will end
+  }
+
+<<<<<<< HEAD
+  remindMe(){ //return a string
+    return ('Learning is a life-long pursuit');
+  }
+=======
+>>>>>>> 6ebe82e1d893d72609d5d1cf52c6215f4aaee42f
 }
