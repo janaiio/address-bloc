@@ -4,7 +4,7 @@
   "description": "An application to model an address book in Node",
   "main": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001bapp.js\u001b[C\u001b[D)\u001b[C\u001b[C",
   "scripts": {
-    "test": "set NODE_ENV=test && jasmine"
+    "test": "set NODE_ENV=test&& jasmine"
   },
   "keywords": [
     "address",
@@ -15,7 +15,10 @@
   "author": "Janai Smith",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^5.1.0"
+    "inquirer": "^5.1.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.32.6"
   },
   "devDependencies": {
     "jasmine": "^3.1.0"
