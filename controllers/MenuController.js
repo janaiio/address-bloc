@@ -1,6 +1,7 @@
 //This will be a JavaScript class with methods to handle receiving requests from the user
 
-const inquirer = require ('inquirer');
+const inquirer = require('inquirer');
+const ContactController = require('./ContactController');
 
 module.exports = class MenuController {
   constructor(){
@@ -11,13 +12,13 @@ module.exports = class MenuController {
           message: "Please choose from an option below: ",
           choices: [
             "Add new contact", //triggers method to add individual contact
-            "Exit", //exit the program
             "Current date and time",
-            "Reminder"
+            "Reminder",
+            "Exit" //exit the program
           ]
       }
     ];
-    this.contacts = [];
+    this.book = new ContactController();
   }
 
   main(){
@@ -27,14 +28,14 @@ module.exports = class MenuController {
         case "Add new contact" :
           this.addContact();
           break;
-        case "Exit":
-          this.exit();
-          break;
         case "Current date and time":
           this.getDate();
           break;
         case "Reminder":
           this.remindMe();
+          break;
+        case "Exit":
+          this.exit();
           break;
         default:
           console.log("Invalid input");
@@ -56,11 +57,6 @@ module.exports = class MenuController {
     this.main(); //returns main menu
   }
 
-  exit(){
-    console.log("Thanks for using AddressBloc!");
-    process.exit(); //program will end
-  }
-
   getContactCount(){
     return this.contacts.length;
   }
@@ -68,9 +64,16 @@ module.exports = class MenuController {
   getDate(){ //logs the current time and date
     const ts = new Date();
     console.log(ts.toLocaleString());
+    this.main();
   }
 
   remindMe(){ //return a string
     return ('Learning is a life-long pursuit');
   }
+
+  exit(){
+    console.log("Thanks for using AddressBloc!");
+    process.exit(); //program will end
+  }
+
 }
