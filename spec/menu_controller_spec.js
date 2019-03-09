@@ -11,3 +11,4 @@ describe("MenuController", () => { //passes MenuController as name of test suite
       expect(this.menu.remindMe()).toBe('Learning is a life-long pursuit')
     })
   });
+});
