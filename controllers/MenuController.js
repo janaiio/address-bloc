@@ -12,21 +12,9 @@ module.exports = class MenuController {
           message: "Please choose from an option below: ",
           choices: [
             "Add new contact", //triggers method to add individual contact
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "Exit", //exit the program
-            "Current date and time",
-            "Reminder"
-=======
             "Current date and time",
             "Reminder",
             "Exit" //exit the program
->>>>>>> 6ebe82e1d893d72609d5d1cf52c6215f4aaee42f
-=======
-            "Current date and time",
-            "Reminder",
-            "Exit" //exit the program
->>>>>>> checkpoint-3-contactsAndDatabase
           ]
       }
     ];
@@ -46,18 +34,9 @@ module.exports = class MenuController {
         case "Reminder":
           this.remindMe();
           break;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         case "Exit":
           this.exit();
           break;
->>>>>>> 6ebe82e1d893d72609d5d1cf52c6215f4aaee42f
-=======
-        case "Exit":
-          this.exit();
-          break;
->>>>>>> checkpoint-3-contactsAndDatabase
         default:
           console.log("Invalid input");
           this.main();
@@ -74,14 +53,6 @@ module.exports = class MenuController {
 
   addContact(){
     this.clear();
-<<<<<<< HEAD
-    console.log('addContact called');
-    this.main(); //returns main menu
-  }
-
-  getContactCount(){
-    return this.contacts.length;
-=======
     inquirer.prompt(this.book.addContactQuestions).then((answers) => {
       this.book.addContact(answers.name, answers.phone).then((contact) => {
         console.log("Contact added successfully!");
@@ -91,7 +62,6 @@ module.exports = class MenuController {
         this.main();
       });
     });
->>>>>>> checkpoint-3-contactsAndDatabase
   }
 
   getContactCount(){
@@ -102,7 +72,6 @@ module.exports = class MenuController {
     const ts = new Date();
     console.log(ts.toLocaleString());
     this.main();
-<<<<<<< HEAD
   }
 
   remindMe(){ //return a string
@@ -112,23 +81,6 @@ module.exports = class MenuController {
   exit(){
     console.log("Thanks for using AddressBloc!");
     process.exit(); //program will end
-=======
->>>>>>> checkpoint-3-contactsAndDatabase
   }
 
-<<<<<<< HEAD
-  remindMe(){ //return a string
-    return ('Learning is a life-long pursuit');
-  }
-<<<<<<< HEAD
-=======
->>>>>>> 6ebe82e1d893d72609d5d1cf52c6215f4aaee42f
-=======
-
-  exit(){
-    console.log("Thanks for using AddressBloc!");
-    process.exit(); //program will end
-  }
-
->>>>>>> checkpoint-3-contactsAndDatabase
 }
